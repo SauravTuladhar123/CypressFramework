@@ -1,0 +1,31 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  cypress-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install needed dependencies
+      run:
+        npm i
+        
+    -name: Delete temporary files
+      run: npm run delete_temporary_files
+        
+    -name: Run Cypress automated tests
+      run: npm run automated_tests -- --env username=qa+qa4@qobrix.com,password=Qobrix1234!
+      continue-on-error: false
+      
+    -name: Generate report
+      run: npm run final_report
+      
