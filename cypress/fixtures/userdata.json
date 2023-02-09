@@ -1,0 +1,28 @@
+{
+  "invalid_userdata": [
+    {
+      "username": "testuserautomation@mail.com",
+      "password": "test@1234"
+    },
+    {
+      "username": "testuserautomation1@mail.com",
+      "password": "test@123"
+    }
+  ],
+  "properties_Data": [
+    {
+      "search": "house",
+      "propertyName": "Automation Property",
+      "shortDescription": "This is short description",
+      "updatePropertyText": " update",
+      "propertyTypeFilter": "Property Type",
+      "LocationFilter": "Location",
+      "SaleOrRentFilter": "For Sale or for Rent"
+    }
+  ],
+  "projects_Data": [
+    {
+      "projectName": "Automation project"
+    }
+  ]
+}

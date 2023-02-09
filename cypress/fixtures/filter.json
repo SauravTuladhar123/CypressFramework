@@ -1,0 +1,92 @@
+[
+  {
+    "module": "properties",
+    "url": "/crm/properties",
+    "fields": [
+      "Property Type",
+      "For Sale or for Rent",
+      "Status",
+      "Seller",
+      "Assigned To",
+      "Internal Area",
+      "Price",
+      "Bedrooms",
+      "Location"
+    ]
+  },
+  {
+    "module": "projects",
+    "url": "/crm/projects",
+    "fields": [
+      "Availabilty Status",
+      "Construction Stage",
+      "Completion Date",
+      "Location"
+    ]
+  },
+  {
+    "module": "leads",
+    "url": "/crm/opportunities",
+    "fields": [
+      "Buy / Rent",
+      "Location",
+      "Status",
+      "Price",
+      "Owner",
+      "Enquiry Type",
+      "Direct Source",
+      "Campaign ID",
+      "Broker / External Agent"
+    ]
+  },
+  {
+    "module": "Offers",
+    "url": "/crm/offers",
+    "fields": [
+      "Property",
+      "Opportunity",
+      "Offer Sale Rent",
+      "Offer Status",
+      "Offer Price",
+      "Counteroffer Price",
+      "Offer Date Sent",
+      "Counteroffer Date Sent"
+    ]
+  },
+  {
+    "module": "Agreements",
+    "url": "/crm/contracts",
+    "fields": [
+      "Contract Type",
+      "Contract Status",
+      "Final Selling Price",
+      "Final Rental Price",
+      "Assigned To",
+      "Date of Reservation",
+      "Date of Contract",
+      "Property id"
+    ]
+  },
+  {
+    "module": "Contacts & Organisations",
+    "url": "/crm/contacts",
+    "fields": ["Country", "Nationality", "City", "Assigned To", "Organisation"]
+  },
+  {
+    "module": "Brokers & External Agents",
+    "url": "/crm/agents",
+    "fields": ["Agent/Broker Type", "Status", "Owner", "Commission 1"]
+  },
+  {
+    "module": "Campaigns",
+    "url": "/crm/campaigns",
+    "fields": [
+      "Type",
+      "Status",
+      "Cost",
+      "Assigned To",
+      "Start Date",
+      "End Date"
+    ]
+  }
+]

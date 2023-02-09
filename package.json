@@ -1,0 +1,30 @@
+{
+  "name": "automated_tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open",
+    "e2e": "npx cypress run --spec .\\cypress\\e2e --browser chrome --headed",
+    "single_test": "npx cypress run --spec .\\cypress\\e2e\\login\\login.cy.js --browser chrome --headed",
+    "merge": "mochawesome-merge cypress/reports/*.json > output.json",
+    "generate_mochawesome_report": "marge output.json --reportDir ./ --inline",
+    "generate-report": "marge output.json -f report -o ./ -- inline",
+    "final_report": "npm run merge && npm run generate_mochawesome_report",
+    "remove_report_directory": "rmdir -recurse cypress/reports",
+    "remove_output.json": "del output.json",
+    "remove_output.html": "del output.html",
+    "automated_singletest": "(if exist cypress\\reports (rmdir /Q /S cypress\\reports)) && (if exist cypress\\screenshots (rmdir /Q /S cypress\\screenshots)) && npm run remove_output.json && npm run remove_output.html && npm run single_test && npm run final_report",
+    "delete_temporary_files": "(if exist cypress\\reports (rmdir /Q /S cypress\\reports)) && (if exist cypress\\screenshots (rmdir /Q /S cypress\\screenshots)) && npm run remove_output.json && npm run remove_output.html",
+    "automated_tests": "npx cypress run --spec .\\cypress\\e2e --browser chrome --headed"
+  },
+  "author": "saurav",
+  "license": "ISC",
+  "devDependencies": {
+    "@cypress/xpath": "^2.0.3",
+    "cypress": "^12.3.0",
+    "cypress-multi-reporters": "^1.6.2",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.2"
+  }
+}
