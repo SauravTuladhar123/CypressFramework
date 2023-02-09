@@ -28,7 +28,7 @@ describe("Projects Module", () => {
         .PhotoUpload()
         .invoke("show")
         .selectFile(
-          "\\cypressframework\\cypress\\fixtures\\property_feature_image.jpeg"
+          "./cypressframework/cypress/fixtures/property_feature_image.jpeg"
         );
       properties.ConfirmPhotoUpload().click();
       projects.ProjectName().type(data.projects_Data[0].projectName);
