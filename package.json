@@ -16,7 +16,7 @@
     "remove_output.html": "del output.html",
     "automated_singletest": "(if exist cypress\\reports (rmdir /Q /S cypress\\reports)) && (if exist cypress\\screenshots (rmdir /Q /S cypress\\screenshots)) && npm run remove_output.json && npm run remove_output.html && npm run single_test && npm run final_report",
     "delete_temporary_files": "(if exist cypress\\reports (rmdir /Q /S cypress\\reports)) && (if exist cypress\\screenshots (rmdir /Q /S cypress\\screenshots)) && npm run remove_output.json && npm run remove_output.html",
-    "automated_tests": "npx cypress run --spec ./cypress/e2e/**/*.js --browser chrome --headed"
+    "automated_tests": "npx cypress run --spec "./cypress/e2e/**/*.js" --browser chrome --headed"
   },
   "author": "saurav",
   "license": "ISC",
