@@ -22,6 +22,9 @@ jobs:
       run: npm run automated_tests -- --env username=qa+qa4@qobrix.com,password=Qobrix1234!
       continue-on-error: true
       
+    - name: Create public directory and copy test executed media files
+      run: mkdir public
+      
     - name: Generate report
       run: npm run final_report
       
