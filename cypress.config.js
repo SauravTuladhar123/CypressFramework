@@ -6,7 +6,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     //https://qa3.eu-test.qobrix.com  http://localhost:4200/  https://qaqa4.eu-test.qobrix.com
-    specPattern: "./cypress/e2e",
+    specPattern: "./cypress/e2e/**/*.js",
     baseUrl: "https://qaqa4.eu-test.qobrix.com",
     chromeWebSecurity: false,
     pageLoadTimeout: 25000,
