@@ -26,7 +26,7 @@ describe("Properties Module", () => {
         .PhotoUpload()
         .invoke("show")
         .selectFile(
-          "\\cypressframework\\cypress\\fixtures\\property_feature_image.jpeg"
+          "./cypress/fixtures/property_feature_image.jpeg"
         );
       properties.ConfirmPhotoUpload().click();
       properties
@@ -93,7 +93,7 @@ describe("Properties Module", () => {
         .PhotoUpload()
         .invoke("show")
         .selectFile(
-          "\\cypressframework\\cypress\\fixtures\\property_feature_image.jpeg"
+          "./cypress/fixtures/property_feature_image.jpeg"
         );
       properties.ConfirmPhotoUpload().click();
       properties.PropertyName().type(data.properties_Data[0].propertyName);
