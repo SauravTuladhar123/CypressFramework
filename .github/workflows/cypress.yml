@@ -18,9 +18,6 @@ jobs:
     - name: Install needed dependencies
       run: npm i
         
-    - name: Delete temporary files
-      run: npm run delete_temporary_files
-        
     - name: Run Cypress automated tests
       run: npm run automated_tests -- --env username=qa+qa4@qobrix.com,password=Qobrix1234!
       continue-on-error: false
