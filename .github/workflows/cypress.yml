@@ -26,6 +26,7 @@ jobs:
       
     - name: Create public directory and copy test executed media files
       run: mkdir public
+          cp -r cypress/output.html public
       
     - name: Generate report
       run: npm run final_report
