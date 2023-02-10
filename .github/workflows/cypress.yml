@@ -29,7 +29,7 @@ jobs:
       
     - name: Create public directory and copy test executed media files
       run: mkdir public
-            cp -r cypress/output.html public
+            cp cypress/output.html public
       
     - name: Deploy html report to Github page
       uses: peaceiris/actions-gh-pages@v3
