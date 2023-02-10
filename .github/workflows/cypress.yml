@@ -2,42 +2,46 @@
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
 name: Node.js CI
-
 on:
   push:
-    branches: 
-      - 'main'
+    branches:
+      - "main"
   pull_request:
-    branches: 
-      - 'main'
+    branches:
+      - "main"
+
+name: Automated test schedular
+on:
+  schedule:
+  - cron: "0 30 14 ? * MON,TUE,WED,THU,FRI *"      
 
 jobs:
   cypress-test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Install needed dependencies
-      run: npm i
-        
-    - name: Run Cypress automated tests
-      run: npm run automated_tests -- --env username=qa+qa4@qobrix.com,password=Qobrix1234!
-      continue-on-error: true
-      
-    - name: Generate report
-      run: npm run final_report
-      
-    - name: Upload report
-      uses: actions/upload-artifact@v3
-      with:
-        name: Automated_test_report
-        path: output.html
+      - uses: actions/checkout@v3
 
-    - name: Create public directory and copy test executed media files
-      run: mkdir -p public && cp output.html public && mv public/output.html public/index.html
-      
-    - name: Deploy html report to Github page
-      uses: peaceiris/actions-gh-pages@v3
-      with:
+      - name: Install needed dependencies
+        run: npm i
+
+      - name: Run Cypress automated tests
+        run: npm run automated_tests -- --env username=qa+qa4@qobrix.com,password=Qobrix1234!
+        continue-on-error: true
+
+      - name: Generate report
+        run: npm run final_report
+
+      - name: Upload report
+        uses: actions/upload-artifact@v3
+        with:
+          name: Automated_test_report
+          path: output.html
+
+      - name: Create public directory and copy test executed media files
+        run: mkdir -p public && cp output.html public && mv public/output.html public/index.html
+
+      - name: Deploy html report to Github page
+        uses: peaceiris/actions-gh-pages@v3
+        with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
