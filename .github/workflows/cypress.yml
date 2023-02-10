@@ -28,7 +28,7 @@ jobs:
       run: npm run final_report
       
     - name: Create public directory and copy test executed media files
-      run: mkdir public
+      run: mkdir -p public
             cp cypress/output.html public
       
     - name: Deploy html report to Github page
