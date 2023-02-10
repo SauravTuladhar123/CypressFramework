@@ -28,7 +28,7 @@ jobs:
       run: npm run final_report
       
     - name: Create public directory and copy test executed media files
-      run: mkdir -p public && cp CypressFramework/output.html public
+      run: mkdir -p public && cp output.html public
       
     - name: Deploy html report to Github page
       uses: peaceiris/actions-gh-pages@v3
