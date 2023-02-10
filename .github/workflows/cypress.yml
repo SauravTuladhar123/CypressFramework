@@ -10,7 +10,7 @@ on:
     branches:
       - "main"
   schedule:
-      - cron: "0 36 14 ? * MON,TUE,WED,THU,FRI *      
+      - cron: "40 14 * 1-12 1-5"      
 
 jobs:
   cypress-test:
